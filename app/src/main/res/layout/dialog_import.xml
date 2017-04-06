@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/tip_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/blue_circle"
+        android:text=" ? "
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/wif_input_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingEnd="23dp"
+        android:layout_marginTop="23dp"
+        app:errorEnabled="true"
+        android:textColorHint="@color/colorPrimary">
+
+        <io.steemapp.steemy.views.SteemyEditText
+            android:id="@+id/wif_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:textSize="26sp"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimary"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/import_key_type"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center"
+        />
+</RelativeLayout>

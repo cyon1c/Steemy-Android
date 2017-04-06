@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".fragments.SettingsFragment"
+    tools:showIn="@layout/app_bar_settings"
+    android:orientation="vertical">
+
+    <io.steemapp.steemy.views.SteemyButton
+        android:id="@+id/logout_button"
+        android:text="Logout"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        app:typeface="SourceSansPro-Semibold.otf"
+        android:background="@drawable/button_color_primary_stroke"/>
+
+    <io.steemapp.steemy.views.SteemyButton
+        android:id="@+id/manage_auth_button"
+        android:text="Manage Account"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        app:typeface="SourceSansPro-Semibold.otf"
+        android:background="@drawable/button_solid_white_stroke"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <io.steemapp.steemy.views.SteemyButton
+        android:id="@+id/tos"
+        android:text="Terms of Service"
+        android:textColor="@color/colorPrimary"
+        app:typeface="SourceSerifPro-Regular.otf"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_solid_white_stroke"/>
+
+    <io.steemapp.steemy.views.SteemyButton
+        android:id="@+id/privacy_policy"
+        android:text="Privacy Policy"
+        app:typeface="SourceSerifPro-Regular.otf"
+        android:textColor="@android:color/white"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_color_primary_stroke"/>
+
+    <io.steemapp.steemy.views.SteemyButton
+        android:id="@+id/open_source"
+        android:text="OSS Licenses"
+        android:textColor="@color/colorPrimary"
+        app:typeface="SourceSerifPro-Regular.otf"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/button_solid_white_stroke"/>
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".fragments.WalletFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="3dp">
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/steem_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text="STEEM"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            app:typeface="SourceSansPro-SemiBoldlt.otf"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:text="Tradeable tokens that may be transferred anywhere at anytime. Steem can be converted to Steem Power in a process called powering up."
+            android:textSize="13sp"
+            app:typeface="SourceSansPro-Light.otf"
+            android:textColor="@color/medGray"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/steem_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:textSize="28sp"
+            app:typeface="SourceSansPro-Bold.otf"
+            android:textColor="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="3dp">
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/steem_power_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text="STEEM POWER"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            app:typeface="SourceSansPro-SemiBoldlt.otf"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:text="Influence tokens which earn more power by holding long term. The more you hold the more you influence post rewards and earn for accurate voting."
+            android:textSize="13sp"
+            app:typeface="SourceSansPro-Light.otf"
+            android:textColor="@color/medGray"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/steem_power_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:textSize="28sp"
+            app:typeface="SourceSansPro-Bold.otf"
+            android:textColor="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="3dp">
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/steem_dollars_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text="STEEM DOLLARS"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            app:typeface="SourceSansPro-SemiBoldlt.otf"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:text="Tokens worth about $1.00 of Steem."
+            android:textSize="13sp"
+            app:typeface="SourceSansPro-Light.otf"
+            android:textColor="@color/medGray"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/steem_dollars_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:textSize="28sp"
+            app:typeface="SourceSansPro-Bold.otf"
+            android:textColor="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

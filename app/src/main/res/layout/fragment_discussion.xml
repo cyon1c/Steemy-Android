@@ -1,0 +1,135 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.DiscussionFragment"
+    tools:showIn="@layout/app_bar_discussion">
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/discussion_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/medGray"
+        app:typeface="SourceSansPro-Semiboldlt.otf"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="26dp">
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/discussion_author"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/divider"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            app:typeface="SourceSansPro-Semibold.otf"/>
+
+        <View
+            android:id="@+id/divider"
+            android:background="@drawable/small_black_circle"
+            android:layout_width="3dp"
+            android:layout_height="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"/>
+
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/discussion_time_stamp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/divider"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/lightGray"
+            android:textSize="17sp"
+            app:typeface="SourceSansPro-Light.otf"/>
+
+    </RelativeLayout>
+
+    <ViewFlipper
+        android:id="@+id/discussion_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp">
+        <WebView
+            android:id="@+id/discussion_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <WebView
+            android:id="@+id/comments_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </ViewFlipper>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp">
+
+        <ImageView
+            android:id="@+id/upvote_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/upvote"
+            android:layout_gravity="center_vertical" />
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/discussion_payout"
+            android:text="$Payout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/medGray"
+            app:typeface="SourceSansPro-Semiboldlt.otf"
+            />
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/comments_button"
+            android:background="@drawable/button_color_primary_stroke"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="6dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="View Comments"
+            android:textColor="@android:color/white"
+            app:typeface="SourceSansPro-Semiboldlt.otf"/>
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/reply_button"
+            android:background="@drawable/button_solid_white_stroke"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="12dp"
+            android:text="Reply"
+            android:textColor="@color/colorPrimary"
+            app:typeface="SourceSansPro-Semiboldlt.otf"/>
+
+    </LinearLayout>
+
+</LinearLayout>

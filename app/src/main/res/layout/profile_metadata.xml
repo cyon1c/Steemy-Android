@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/profile_steem"
+        layout="@layout/profile_metadata_item"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"/>
+
+    <include
+        android:id="@+id/profile_followers"
+        layout="@layout/profile_metadata_item"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"/>
+
+    <include
+        android:id="@+id/profile_posts"
+        layout="@layout/profile_metadata_item"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"/>
+
+    <include
+        android:id="@+id/profile_following"
+        layout="@layout/profile_metadata_item"/>
+
+</LinearLayout>

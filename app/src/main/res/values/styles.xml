@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.titleText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTheme.discussionMetadataText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/lightGray</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="typeface">SourceSansPro-Regular.otf</item>
+    </style>
+
+    <style name="AppTheme.discussionMetadataImage">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginRight">2dp</item>
+
+    </style>
+
+    <style name="button">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="button.solidwhite">
+        <item name="android:background">@drawable/button_solid_white</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="button.colorprimarystroke">
+        <item name="android:background">@drawable/button_color_primary_stroke</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="button.colorprimarysolid">
+        <item name="android:background">@drawable/button_color_primary_solid</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="button.solidwhitestroke">
+        <item name="android:background">@drawable/button_solid_white_stroke</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

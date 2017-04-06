@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="io.steemy.steemy.views.SteemyTextView">
+        <attr name="typeface" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="IndeterminateRadialBar">
+        <attr name="spinning" format="boolean"/>
+        <attr name="ifillColor" format="color"/>
+        <attr name="ibackgroundColor" format="color"/>
+    </declare-styleable>
+
+</resources>

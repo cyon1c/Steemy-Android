@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/steemy_dialog"
+        android:src="@drawable/steemy_sad_concept"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerInside"/>
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/error_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:typeface="SourceSansPro-Regular.otf"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        app:typeface="SourceSansPro-Regular.otf"
+        android:textColor="@color/colorPrimary"/>
+
+</LinearLayout>

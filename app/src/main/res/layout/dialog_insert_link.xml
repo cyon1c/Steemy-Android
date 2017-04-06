@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/link_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Link"
+        app:errorEnabled="true"
+        >
+
+        <io.steemapp.steemy.views.SteemyEditText
+            android:id="@+id/insert_link_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:singleLine="true"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/title_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Hyperlink Text"
+        app:errorEnabled="true"
+        >
+
+        <io.steemapp.steemy.views.SteemyEditText
+            android:id="@+id/link_title_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:singleLine="true"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

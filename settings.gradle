@@ -1,0 +1,2 @@
+include ':app', ':anddown'
+project(':anddown').projectDir = new File('cwac-anddown/anddown')

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/compose_title_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Post Title"
+        app:errorEnabled="true"
+        >
+
+        <io.steemapp.steemy.views.SteemyEditText
+            android:id="@+id/compose_post_title"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:singleLine="true"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/compose_category_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Category"
+        app:errorEnabled="true"
+        >
+
+        <io.steemapp.steemy.views.SteemyAutoCompleteTextView
+            android:id="@+id/new_post_category_chooser"
+            android:layout_width="match_parent"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tags_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Tags (Press 'Enter' after each tag)"
+        app:errorEnabled="true"
+        >
+
+        <io.steemapp.steemy.views.SteemyEditText
+            android:id="@+id/compose_post_tags"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:singleLine="true"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tag_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"/>
+
+</LinearLayout>

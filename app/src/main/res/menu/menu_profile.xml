@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.steemapp.steemy.activities.ProfileActivity">
+
+    <item
+        android:title="Follow"
+        android:id="@+id/nav_follow"
+        android:icon="@drawable/like_outline"/>
+    <item
+        android:title="Unfollow"
+        android:id="@+id/nav_unfollow"
+        android:visible="false"/>
+    <item
+        android:id="@+id/nav_mute"
+        android:icon="@drawable/mute"
+        android:title="Mute"/>
+    <item
+        android:title="Unmute"
+        android:id="@+id/nav_unmute"
+        android:visible="false"/>
+
+</menu>

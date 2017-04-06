@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="io.steemapp.steemy.fragments.TransferFragment"
+    android:orientation="vertical"
+    android:background="@color/colorAccentDark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/transfer_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/transfer_account_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/colorPrimary"
+            app:errorEnabled="true">
+            <io.steemapp.steemy.views.SteemyTextInputEditText
+                android:id="@+id/transfer_account_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:typeface="SourceSansPro-Regular.otf"
+                android:textSize="26sp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:textColor="@color/colorPrimary"
+                />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <io.steemapp.steemy.views.SteemyKeyPad
+        android:id="@+id/transfer_keypad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="8dp"/>
+
+    <io.steemapp.steemy.views.SteemyButton
+        android:id="@+id/submit_transfer_button"
+        android:text="Submit"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        app:typeface="SourceSansPro-Regular.otf"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_color_primary_stroke"/>
+
+</LinearLayout>

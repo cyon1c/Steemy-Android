@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:id="@+id/vote_seek_bar"
+            android:layout_width="250dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="20dp"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:text="0%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/vote_seek_bar"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/vote_seek_bar"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/vote_seek_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vote_seek_bar"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerHorizontal="true"/>
+
+        <io.steemapp.steemy.views.SteemyTextView
+            android:id="@+id/seek_bar_max"
+            android:text="+100%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/vote_seek_bar"
+            android:layout_alignEnd="@+id/vote_seek_bar"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/vote_cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/button_solid_white_stroke"
+            android:textColor="@color/colorPrimary"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:text="Cancel"
+            android:layout_weight="1"/>
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/vote_positive_button"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/button_color_primary_stroke"
+            android:textColor="@android:color/white"
+            app:typeface="SourceSansPro-Regular.otf"
+            android:text="Vote"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

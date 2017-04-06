@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.steemapp.steemy.activities.TermsAndPrivacyActivity"
+    android:orientation="vertical">
+
+    <ViewFlipper
+        android:id="@+id/tos_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <WebView
+            android:id="@+id/tos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <WebView
+            android:id="@+id/pp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ViewFlipper>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/tos_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:text="TOS"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_color_primary_stroke"/>
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/pp_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:text="Privacy Policy"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_color_primary_stroke"/>
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/agree_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:text="Agree"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_color_primary_stroke"/>
+    </LinearLayout>
+
+</LinearLayout>

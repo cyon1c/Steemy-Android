@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:text="Active Key"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        app:typeface="SourceSansPro-Regular.otf"
+        android:layout_marginBottom="5dp"
+        android:layout_height="36dp" />
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/active_key_text"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:typeface="SourceSansPro-SemiBold.otf"
+        android:layout_marginBottom="8dp"
+        android:layout_height="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/show_active"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@drawable/button_color_primary_stroke"
+            android:textColor="@android:color/white"
+            android:text="Show Private"
+            android:layout_height="36dp" />
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/add_remove_active"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@drawable/button_solid_white_stroke"
+            android:textColor="@color/colorPrimary"
+            android:text="Remove Key"
+            android:layout_height="36dp" />
+
+    </LinearLayout>
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:textSize="14sp"
+        android:text="Posting Key"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        app:typeface="SourceSansPro-Regular.otf"
+        android:layout_marginBottom="5dp"/>
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/posting_key_text"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:typeface="SourceSansPro-SemiBold.otf"
+        android:layout_marginBottom="8dp"
+        android:layout_height="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/show_posting"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@drawable/button_color_primary_stroke"
+            android:textColor="@android:color/white"
+            android:text="Show Private"
+            android:layout_height="36dp" />
+
+        <io.steemapp.steemy.views.SteemyButton
+            android:id="@+id/add_remove_posting"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@drawable/button_solid_white_stroke"
+            android:textColor="@color/colorPrimary"
+            android:text="Remove Key"
+            android:layout_height="36dp" />
+
+    </LinearLayout>
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:textSize="18sp"
+        android:text="Ignored Users"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        app:typeface="SourceSansPro-Semibold.otf"
+        android:layout_marginBottom="5dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ignored_users_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
