@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Steemy.iml" filepath="$PROJECT_DIR$/Steemy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Steemy-Android.iml" filepath="$PROJECT_DIR$/Steemy-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cwac-anddown/anddown/anddown.iml" filepath="$PROJECT_DIR$/cwac-anddown/anddown/anddown.iml" />
       <module fileurl="file://$PROJECT_DIR$/cwac-anddown/anddown/anddown.iml" filepath="$PROJECT_DIR$/cwac-anddown/anddown/anddown.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
