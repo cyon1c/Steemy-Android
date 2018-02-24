@@ -36,6 +36,10 @@ import static io.steemapp.steemy.SteemyGlobals.hexStringToByteArray;
 /**
  * Created by John on 7/27/2016.
  */
+
+/**
+ *
+ */
 public class TransactionBuilder {
 
     protected Bus mEventBus;

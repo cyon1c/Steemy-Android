@@ -32,6 +32,13 @@ import io.steemapp.steemy.transactions.TransactionBuilder;
 import io.steemapp.steemy.transactions.TransactionManager;
 import io.steemapp.steemy.views.SteemyTextView;
 
+/**
+ * AbstractActivity functions as the base unit for all Activities in Steemy. AbstractActivity handles a static state of the app. This state primarily handles three functions:
+ *<p>
+ *     Navigation - Toolbar & Category List
+ *     Starting/Stopping Services - TransactionManager, AccountManager, EventBus
+ *     UI for Login/Out State
+ */
 public abstract class AbstractActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
