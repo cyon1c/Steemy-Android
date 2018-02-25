@@ -23,7 +23,7 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.commonsware.cwac.anddown.AndDown;
+//import com.commonsware.cwac.anddown.AndDown;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -200,7 +200,7 @@ public class Discussion {
         currentPayout = "$" + df.format(value);
     }
 
-    private static AndDown mMarkdownParser;
+//    private static AndDown mMarkdownParser;
     private final Pattern imgPattern = Pattern.compile("(?<![\\\"\\\\/])(https|http):.*?.(png|jpeg|jpg|gif)");
     private final Pattern htmlImgPattern = Pattern.compile("<img.*?src=\"([^\"]*)\".*?>");
     private final Pattern youtubePattern = Pattern.compile("<iframe.+?src=\"http(s)?://www.youtube.com/embed/([a-zA-Z0-9_-]{11})\"[^>]+?></iframe>");
@@ -208,62 +208,27 @@ public class Discussion {
     private Matcher mMatcher;
 
     protected void formatBodyMarkdown(){
-        if(mMarkdownParser == null){
-            mMarkdownParser = new AndDown();
-        }
-//        mMatcher = youtubePattern.matcher(body);
-//        ArrayList<String> youtubeLinks = new ArrayList<>();
-//        while(mMatcher.find()){
-//            String result = mMatcher.group();
-//            youtubeLinks.add(result);
-//            body = body.replace(result, Integer.toString(result.hashCode()));
+//        if(mMarkdownParser == null){
+//            mMarkdownParser = new AndDown();
 //        }
 //
-//        mMatcher = htmlImgPattern.matcher(body);
-//        ArrayList<String> imageLinks = new ArrayList<>();
-//        while(mMatcher.find()){
-//            String result = mMatcher.group();
-//            imageLinks.add(result);
-//            body = body.replace(result, Integer.toString(result.hashCode()));
+//        if(!DetectHtml.isHtml(body)){
+//            while(body.contains("<") || body.contains(">")){
+//                body = body.replace("<", "&lt;");
+//                body = body.replace(">", "&gt;");
+//            }
+//            body = mMarkdownParser.markdownToHtml(body);
 //        }
-
-        if(!DetectHtml.isHtml(body)){
-            while(body.contains("<") || body.contains(">")){
-                body = body.replace("<", "&lt;");
-                body = body.replace(">", "&gt;");
-            }
-            body = mMarkdownParser.markdownToHtml(body);
-        }
-
-        mMatcher = imgPattern.matcher(body);
-        while(mMatcher.find()){
-            String result = mMatcher.group();
-            String replaced = "<img src=\"" + result + "\"></img>";
-            body = body.replace(result, replaced);
-        }
 //
-//        mMatcher = urlPattern.matcher(body);
+//        mMatcher = imgPattern.matcher(body);
 //        while(mMatcher.find()){
 //            String result = mMatcher.group();
-//            String replaced = "<a href=\"" + result + "\">" + result + "</a>";
+//            String replaced = "<img src=\"" + result + "\"></img>";
 //            body = body.replace(result, replaced);
 //        }
-
-//        while(body.contains(Integer.toString("<".hashCode())) || body.contains(Integer.toString(">".hashCode()))){
-//            body = body.replace(Integer.toString("<".hashCode()), "<");
-//            body = body.replace(Integer.toString(">".hashCode()), ">");
-//        }
-
-//        for(String link : youtubeLinks){
-//            body = body.replace(Integer.toString(link.hashCode()), link);
-//        }
-
-//        for(String link : imageLinks){
-//            body = body.replace(Integer.toString(link.hashCode()), link);
-//        }
-
-        body = body.replaceAll("\\n\\n", " <br/> ");
-        body = body.replaceAll("\\n", " <br/> ");
+//
+//        body = body.replaceAll("\\n\\n", " <br/> ");
+//        body = body.replaceAll("\\n", " <br/> ");
 
         SpannableString spannableString = new SpannableString(body);
         Linkify.addLinks(spannableString, Linkify.ALL);
@@ -271,57 +236,25 @@ public class Discussion {
     }
 
     protected void formatCommentMarkdown(){
-        if(mMarkdownParser == null){
-            mMarkdownParser = new AndDown();
-        }
-//        mMatcher = youtubePattern.matcher(body);
-//        ArrayList<String> youtubeLinks = new ArrayList<>();
-//        while(mMatcher.find()){
-//            String result = mMatcher.group();
-//            youtubeLinks.add(result);
-//            body = body.replace(result, Integer.toString(result.hashCode()));
+//        if(mMarkdownParser == null){
+//            mMarkdownParser = new AndDown();
 //        }
 //
-//        mMatcher = htmlImgPattern.matcher(body);
-//        ArrayList<String> imageLinks = new ArrayList<>();
-//        while(mMatcher.find()){
-//            String result = mMatcher.group();
-//            imageLinks.add(result);
-//            body = body.replace(result, Integer.toString(result.hashCode()));
-//        }
-
-        if(!DetectHtml.isHtml(body)){
-            while(body.contains("<") || body.contains(">")){
-                body = body.replace("<", "&lt;");
-                body = body.replace(">", "&gt;");
-            }
-            body = mMarkdownParser.markdownToHtml(body);
-        }
-
-//        mMatcher = imgPattern.matcher(body);
-//        while(mMatcher.find()){
-//            String result = mMatcher.group();
-//            String replaced = "<img src=\"" + result + "\"></img>";
-//            body = body.replace(result, Integer.toString(replaced.hashCode()));
-//            imageLinks.add(replaced);
-//        }
-
-        mMatcher = urlPattern.matcher(body);
-        while(mMatcher.find()){
-            String result = mMatcher.group();
-            String replaced = "<a href=\"" + result + "\">" + result + "</a>";
-            body = body.replace(result, replaced);
-        }
-
-//        for(String link : youtubeLinks){
-//            body = body.replace(Integer.toString(link.hashCode()), link);
+//        if(!DetectHtml.isHtml(body)){
+//            while(body.contains("<") || body.contains(">")){
+//                body = body.replace("<", "&lt;");
+//                body = body.replace(">", "&gt;");
+//            }
+//            body = mMarkdownParser.markdownToHtml(body);
 //        }
 //
-//        for(String link : imageLinks){
-//            body = body.replace(Integer.toString(link.hashCode()), link);
+//
+//        mMatcher = urlPattern.matcher(body);
+//        while(mMatcher.find()){
+//            String result = mMatcher.group();
+//            String replaced = "<a href=\"" + result + "\">" + result + "</a>";
+//            body = body.replace(result, replaced);
 //        }
-
-//        body = body.replaceAll("\\n", " \\\n ");
 
         SpannableString spannableString = new SpannableString(body);
         Linkify.addLinks(spannableString, Linkify.ALL);
