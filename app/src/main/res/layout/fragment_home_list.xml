@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/discussion_list_view"
             android:layout_width="match_parent"
@@ -15,4 +17,17 @@
             android:background="@color/colorAccentDark"/>
 
     </android.support.v4.widget.SwipeRefreshLayout>
-</LinearLayout>
+
+    <io.steemapp.steemy.views.SteemyTextView
+        android:id="@+id/thank_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="26sp"
+        android:textColor="@color/colorPrimary"
+        app:typeface="SourceSansPro-Semibold.otf"
+        android:text="@string/thank_you"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+</RelativeLayout>

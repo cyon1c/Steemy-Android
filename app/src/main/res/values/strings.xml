@@ -27,6 +27,8 @@
     <string name="tos_link">http://www.steemapp.io/tos.html</string>
     <string name="privacy_link">http://www.steemapp.io/privacy.html</string>
 
+    <string name="thank_you">Thanks for checking out Steemy! Steemy is a work in progress! You can follow issues and progress on github!</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -18,6 +18,7 @@ import io.steemapp.steemy.listeners.EndlessRecyclerViewScrollListener;
 import io.steemapp.steemy.listeners.OnDiscussionListInteractionListener;
 import io.steemapp.steemy.models.Discussion;
 import io.steemapp.steemy.models.DiscussionList;
+import io.steemapp.steemy.views.SteemyTextView;
 
 /**
  * A fragment representing a list of Items.
@@ -36,6 +37,7 @@ public class DiscussionListFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private DiscussionListAdapter mAdapter;
     private DiscussionList mDiscussionList;
+    private SteemyTextView mThankYou;
 
     public DiscussionListFragment() {
         mAdapter = new DiscussionListAdapter(new ArrayList<Discussion>(), mListener);
@@ -58,7 +60,7 @@ public class DiscussionListFragment extends Fragment {
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_home_list, container, false);
 
-        mRefreshLayout = (SwipeRefreshLayout)mRootView.findViewById(R.id.swipe_refresh_list);
+        mRefreshLayout = mRootView.findViewById(R.id.swipe_refresh_list);
         mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -66,7 +68,8 @@ public class DiscussionListFragment extends Fragment {
             }
         });
 //        mRefreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimaryDark);
-        mRecyclerView = (RecyclerView)mRootView.findViewById(R.id.discussion_list_view);
+        mRecyclerView = mRootView.findViewById(R.id.discussion_list_view);
+        mThankYou = mRootView.findViewById(R.id.thank_you);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(layoutManager) {
@@ -138,5 +141,10 @@ public class DiscussionListFragment extends Fragment {
     public void finishRefreshing(){
         if(mRefreshLayout != null)
             mRefreshLayout.setRefreshing(false);
+
+        if(mDiscussionList.getDiscussionList().size() == 0){
+            mThankYou.setVisibility(View.VISIBLE);
+            mRefreshLayout.setVisibility(View.GONE);
+        }
     }
 }
