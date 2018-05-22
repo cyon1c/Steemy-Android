@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -107,6 +108,25 @@ public class SteemyAPIService {
         mEventBus.register(this);
         mManager = AccountManager.get(appContext, appBus);
         mService = SteemyNetworkAdapter.getNewService();
+    }
+
+    public void getDynamicGlobalProperties(){
+        HashMap<String, Object> body = new HashMap<>();
+        body.put("id", 1);
+        body.put("jsonrpc","2.0");
+        body.put("method","condenser_api.get_dynamic_global_properties");
+        body.put("params", new ArrayList<>());
+        mService.getDynamicGlobalProperties(body).enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.i("Success!", response.body().getAsString());
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Log.i("Failure!", t.getMessage());
+            }
+        });
     }
 
     public void getDiscussions(String sortMethod, String tag, String author, String title, final int limit) {

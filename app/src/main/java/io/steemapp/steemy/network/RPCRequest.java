@@ -9,6 +9,9 @@ public class RPCRequest {
     private static Random idGenerator = new Random();
     private static Integer idIncremental = idGenerator.nextInt();
 
+    @SerializedName("jsonrpc")
+    private final static String jsonrpc = "2.0";
+
     @SerializedName("id")
     private Integer id;
 

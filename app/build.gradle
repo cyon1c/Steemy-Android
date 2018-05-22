@@ -41,5 +41,6 @@ dependencies {
     implementation 'org.bitcoinj:bitcoinj-core:0.14.3'
     implementation 'com.android.support:multidex:1.0.1'
     implementation 'net.hockeyapp.android:HockeySDK:4.0.0'
+    implementation 'jp.wasabeef:richeditor-android:1.2.2'
     testImplementation 'junit:junit:4.12'
 }

@@ -1,4 +1,4 @@
-package io.steemapp.steemy.network;
+package io.steemapp.steemy.network.interceptors;
 
 import android.util.Log;
 
@@ -8,12 +8,12 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
-class LoggingInterceptor implements Interceptor {
+public class LoggingInterceptor implements Interceptor {
     @Override public Response intercept(Interceptor.Chain chain) throws IOException {
         Request request = chain.request();
 
         long t1 = System.nanoTime();
-        Log.i("Logging Interceptor", String.format("Sending request %s on %s%n%s",
+        Log.i("Logging Interceptor", String.format("Sending request %s on connection: %s%n%s",
                 request.url(), chain.connection(), request.headers()));
 
         Response response = chain.proceed(request);

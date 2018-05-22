@@ -1,5 +1,7 @@
 package io.steemapp.steemy.network;
 
+import io.steemapp.steemy.network.interceptors.LoggingInterceptor;
+import io.steemapp.steemy.network.interceptors.RPCResponseInterceptor;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -10,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class SteemyNetworkAdapter {
 
-    private final static String BASEURL = "https://api.steemit.com/";
+    private final static String BASEURL = "https://api.steemit.com";
 
     protected static SteemyRetrofitService getNewService() {
         return new Retrofit.Builder()
@@ -22,16 +24,10 @@ public class SteemyNetworkAdapter {
     }
 
     private static OkHttpClient newJsonRPCClient(){
-//        OkHttpClient clientBuilder = new OkHttpClient.Builder()
-//                .addInterceptor(new LoggingInterceptor())
-//                .cache(buildCache());
+        return new OkHttpClient.Builder()
+                .addInterceptor(new LoggingInterceptor())
+                .addInterceptor(new RPCResponseInterceptor())
+                .build();
 
-        return new OkHttpClient();
     }
-
-//    private static Cache buildCache(){
-//
-//    }
-
-
 }

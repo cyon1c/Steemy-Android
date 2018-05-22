@@ -91,6 +91,7 @@ public abstract class AbstractActivity extends AppCompatActivity
         mService = SteemyAPIService.getService(getApplicationContext(), mEventBus);
         mTransactor = TransactionBuilder.getInstance(mEventBus, mAccountManager);
         mTransactionManager = TransactionManager.instance(mAccountManager, mEventBus);
+        mService.getDynamicGlobalProperties();
         if(SteemyGlobals.areCategoriesInSync()){
             mCategoryData = SteemyGlobals.steemyCategories;
         }else{

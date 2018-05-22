@@ -4,14 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class RPCResponse {
 
+    @SerializedName("jsonrpc")
+    private String jsonrpc;
+
     @SerializedName("result")
-    private Object result;
+    protected Object result;
 
     @SerializedName("error")
-    private String error;
+    protected String error;
 
     @SerializedName("id")
-    private Integer id;
+    protected Integer id;
 
     public RPCResponse(Object result, String error, Integer id) {
         this.result = result;

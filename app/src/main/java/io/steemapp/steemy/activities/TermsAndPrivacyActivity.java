@@ -23,7 +23,8 @@ public class TermsAndPrivacyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_terms_and_privacy);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        if(prefs.contains(FIRST_RUN_KEY)) {
+//        if(prefs.contains(FIRST_RUN_KEY)) {
+        if(true){
             startActivity(HomeListActivity.intent(this));
             finish();
         }
