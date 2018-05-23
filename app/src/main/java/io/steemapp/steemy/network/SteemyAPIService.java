@@ -62,6 +62,7 @@ import io.steemapp.steemy.models.FollowerList;
 import io.steemapp.steemy.models.GlobalResults;
 import io.steemapp.steemy.multithreaded.CommentParseManager;
 
+import io.steemapp.steemy.network.rpc.RPCRequest;
 import io.steemapp.steemy.transactions.FollowOperation;
 import io.steemapp.steemy.transactions.Transaction;
 import io.steemapp.steemy.transactions.TransferOperation;
@@ -111,12 +112,7 @@ public class SteemyAPIService {
     }
 
     public void getDynamicGlobalProperties(){
-        HashMap<String, Object> body = new HashMap<>();
-        body.put("id", 1);
-        body.put("jsonrpc","2.0");
-        body.put("method","condenser_api.get_dynamic_global_properties");
-        body.put("params", new ArrayList<>());
-        mService.getDynamicGlobalProperties(body).enqueue(new Callback<JsonObject>() {
+        mService.getDynamicGlobalProperties(RPCRequest.simpleRequest("condenser_api", "get_dynamic_global_properties")).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 Log.i("Success!", response.body().getAsString());

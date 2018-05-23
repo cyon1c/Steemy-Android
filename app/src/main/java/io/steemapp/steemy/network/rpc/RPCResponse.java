@@ -1,6 +1,7 @@
 package io.steemapp.steemy.network.rpc;
 
 import com.google.gson.JsonObject;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class RPCResponse {
@@ -8,12 +9,15 @@ public class RPCResponse {
     @SerializedName("jsonrpc")
     private String jsonrpc;
 
+    @Expose
     @SerializedName("result")
     protected JsonObject result;
 
+    @Expose
     @SerializedName("error")
     protected RPCResponseError error;
 
+    @Expose
     @SerializedName("id")
     protected Integer id;
 

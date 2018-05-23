@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class SteemyNetworkAdapter {
 
-    private final static String BASEURL = "https://api.steemit.com";
+    private final static String BASEURL = "http://postb.in";
 
     protected static SteemyRetrofitService getNewService() {
         return new Retrofit.Builder()

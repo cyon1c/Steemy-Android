@@ -13,6 +13,7 @@ import io.steemapp.steemy.models.Discussion;
 import io.steemapp.steemy.models.DiscussionList;
 import io.steemapp.steemy.models.FollowerList;
 import io.steemapp.steemy.models.GlobalResults;
+import io.steemapp.steemy.network.rpc.RPCRequest;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -31,10 +32,8 @@ import retrofit2.http.Path;
  */
 public interface SteemyRetrofitService {
 
-    @POST("/")
-    Call<JsonObject> getDynamicGlobalProperties(
-            @Body HashMap globalPropsJSON
-    );
+    @POST("/gLF4bZDk")
+    Call<JsonObject> getDynamicGlobalProperties(@Body RPCRequest globalPropsRequest);
 
     @GET("get_categories/{sort}/{after}/{limit}")
     Call<CategoryList> getCategories(@Path("sort") String sort,
