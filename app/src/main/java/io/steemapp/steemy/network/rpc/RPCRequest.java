@@ -1,4 +1,4 @@
-package io.steemapp.steemy.network;
+package io.steemapp.steemy.network.rpc;
 
 import com.google.gson.annotations.SerializedName;
 
