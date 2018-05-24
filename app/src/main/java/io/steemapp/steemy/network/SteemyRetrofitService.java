@@ -33,7 +33,7 @@ import retrofit2.http.Path;
 public interface SteemyRetrofitService {
 
     @POST("/")
-    Call<JsonObject> getDynamicGlobalProperties(@Body RPCRequest globalPropsRequest);
+    Call<JsonObject> call(@Body RPCRequest globalPropsRequest);
 
     @GET("get_categories/{sort}/{after}/{limit}")
     Call<CategoryList> getCategories(@Path("sort") String sort,

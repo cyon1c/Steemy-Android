@@ -1,5 +1,7 @@
 package io.steemapp.steemy.network.rpc;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -22,7 +24,7 @@ public class RPCRequest {
 
     @Expose
     @SerializedName("params")
-    private List<Object> params;
+    private List<JsonObject> params;
 
     @Expose
     @SerializedName("method")
@@ -63,12 +65,24 @@ public class RPCRequest {
         this.id = id;
     }
 
-    public List<Object> getParams() {
+    public List<JsonObject> getParams() {
         return params;
     }
 
-    public void setParams(List<Object> params) {
+    public void setParams(List<JsonObject> params) {
         this.params = params;
+    }
+
+    public void addParam(Object param){
+        Gson gson = new Gson();
+        addJsonParam((JsonObject)gson.toJsonTree(param));
+    }
+
+    public void addJsonParam(JsonObject json){
+        if(params == null)
+            params = new ArrayList<>();
+
+        params.add(json);
     }
 
     public String getMethod() {

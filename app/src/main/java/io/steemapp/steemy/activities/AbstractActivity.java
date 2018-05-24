@@ -136,7 +136,7 @@ public abstract class AbstractActivity extends AppCompatActivity
             public void itemClicked(Category item) {
                 mCategoryData.setCurrent(item);
                 if(activity instanceof HomeListActivity) {
-                    mService.getDiscussions(mSortMethod.toString(), mCategoryData.getCurrent(), "none", "none", 11);
+                    mService.getDiscussions(mSortMethod.toString(), mCategoryData.getCurrent(), null, null, 11);
                     mDrawerLayout.closeDrawers();
                     mCategoryIsDirty = true;
                 }else{

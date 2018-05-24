@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class RPCResponseError{
 
-    private static final String STEEMD_UNKNOWN_ERROR = "Unknown exception";
-    private static final String DB_LOCK_ERROR = "Unable to acquire database lock";
-    private static final String JUSSI_ERROR = "Internal Error";
+    public static final String STEEMD_UNKNOWN_ERROR = "Unknown exception";
+    public static final String DB_LOCK_ERROR = "Unable to acquire database lock";
+    public static final String JUSSI_ERROR = "Internal Error";
 
     private static final String UNSPECIFIED = "unspecified";
 
-    private static final Integer JUSSI_ERROR_CODE = -32603;
+    public static final Integer JUSSI_ERROR_CODE = -32603;
 
     @SerializedName("code")
     protected Integer code;
@@ -44,12 +44,6 @@ public class RPCResponseError{
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
-    }
-
-    public boolean isRetriable(){
-        return (errorMessage.contains(DB_LOCK_ERROR)
-                || errorMessage.contains(STEEMD_UNKNOWN_ERROR)
-                || (errorMessage.contains(JUSSI_ERROR) && code.equals(JUSSI_ERROR_CODE)));
     }
 
     public static RPCResponseError unspecifiedError(){
