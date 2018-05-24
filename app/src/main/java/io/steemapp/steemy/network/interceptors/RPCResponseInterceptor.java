@@ -1,5 +1,7 @@
 package io.steemapp.steemy.network.interceptors;
 
+import android.util.Log;
+
 import com.google.gson.JsonSyntaxException;
 
 import java.io.IOException;

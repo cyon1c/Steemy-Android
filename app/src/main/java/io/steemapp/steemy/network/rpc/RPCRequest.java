@@ -12,8 +12,9 @@ public class RPCRequest {
     private static Random idGenerator = new Random();
     private static Integer idIncremental = idGenerator.nextInt();
 
+    @Expose
     @SerializedName("jsonrpc")
-    private final static String jsonrpc = "2.0";
+    private final String jsonrpc = "2.0";
 
     @Expose
     @SerializedName("id")
@@ -21,7 +22,7 @@ public class RPCRequest {
 
     @Expose
     @SerializedName("params")
-    private List<Object> params = new ArrayList<>();
+    private List<Object> params;
 
     @Expose
     @SerializedName("method")
@@ -29,6 +30,7 @@ public class RPCRequest {
 
     public RPCRequest(Integer id) {
         this.id = id;
+        params = new ArrayList<>();
     }
 
     public static RPCRequest emptySequentialRequest(){

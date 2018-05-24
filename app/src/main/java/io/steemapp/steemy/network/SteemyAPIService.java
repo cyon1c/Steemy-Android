@@ -112,7 +112,8 @@ public class SteemyAPIService {
     }
 
     public void getDynamicGlobalProperties(){
-        mService.getDynamicGlobalProperties(RPCRequest.simpleRequest("condenser_api", "get_dynamic_global_properties")).enqueue(new Callback<JsonObject>() {
+        RPCRequest request = RPCRequest.simpleRequest("condenser_api", "get_dynamic_global_properties");
+        mService.getDynamicGlobalProperties(request).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 Log.i("Success!", response.body().getAsString());

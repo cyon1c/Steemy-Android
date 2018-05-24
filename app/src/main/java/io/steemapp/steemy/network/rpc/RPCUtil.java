@@ -1,6 +1,7 @@
 package io.steemapp.steemy.network.rpc;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import okio.BufferedSource;
 
 public class RPCUtil {
 
-    private static Gson gson = new Gson();
+    private static Gson gson = new GsonBuilder().serializeNulls().create();
 
     public static RPCResponse fromNetworkResponse(Response response) throws JsonSyntaxException, NullPointerException, IOException {
 
