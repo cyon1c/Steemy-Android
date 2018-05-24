@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -61,6 +62,7 @@ import io.steemapp.steemy.models.FollowerList;
 import io.steemapp.steemy.models.GlobalResults;
 import io.steemapp.steemy.multithreaded.CommentParseManager;
 
+import io.steemapp.steemy.network.rpc.RPCRequest;
 import io.steemapp.steemy.transactions.FollowOperation;
 import io.steemapp.steemy.transactions.Transaction;
 import io.steemapp.steemy.transactions.TransferOperation;
@@ -109,27 +111,65 @@ public class SteemyAPIService {
         mService = SteemyNetworkAdapter.getNewService();
     }
 
+    public void getDynamicGlobalProperties(){
+        RPCRequest request = RPCRequest.simpleRequest("condenser_api", "get_dynamic_global_properties");
+        mService.call(request).enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.i("Success!", "Global Props Success");
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Log.i("Failure!", t.getMessage());
+            }
+        });
+    }
+
     public void getDiscussions(String sortMethod, String tag, String author, String title, final int limit) {
         if(checkForNetwork()) {
-            mService.getDiscussions(sortMethod, tag, author, title, limit).enqueue(new Callback<DiscussionList>() {
+//            mService.getDiscussions(sortMethod, tag, author, title, limit).enqueue(new Callback<DiscussionList>() {
+//                @Override
+//                public void onResponse(Call<DiscussionList> discussions, Response<DiscussionList> response) {
+//                    if(response.isSuccessful()) {
+//                        DiscussionList discussionList = response.body();
+//                        discussionList.processList(limit);
+//                        mEventBus.post(new DiscussionsEvent(discussionList));
+//                    }else{
+//                        try {
+//                            mEventBus.post(new NetworkErrorEvent(response.errorBody().string()));
+//                        }catch (IOException e){
+//                            //ignored
+//                        }
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<DiscussionList> call, Throwable t) {
+//                    mEventBus.post(new NetworkErrorEvent(t.getMessage()));
+//                }
+//            });
+            RPCRequest request = RPCRequest.simpleRequest("condenser_api", String.format("get_discussions_by_%s", sortMethod));
+            JsonObject discussionQuery = new JsonObject();
+            discussionQuery.addProperty("tag", tag);
+            discussionQuery.addProperty("limit", limit);
+            if(author != null && title != null){
+                discussionQuery.addProperty("start_author", author);
+                discussionQuery.addProperty("start_permlink", title);
+            }
+
+            request.addJsonParam(discussionQuery);
+            mService.call(request).enqueue(new Callback<JsonObject>() {
                 @Override
-                public void onResponse(Call<DiscussionList> discussions, Response<DiscussionList> response) {
-                    if(response.isSuccessful()) {
-                        DiscussionList discussionList = response.body();
-                        discussionList.processList(limit);
-                        mEventBus.post(new DiscussionsEvent(discussionList));
-                    }else{
-                        try {
-                            mEventBus.post(new NetworkErrorEvent(response.errorBody().string()));
-                        }catch (IOException e){
-                            //ignored
-                        }
-                    }
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    DiscussionList discussionList = new Gson().fromJson(response.body(), DiscussionList.class);
+                    discussionList.processList(limit);
+                    mEventBus.post(new DiscussionsEvent(discussionList));
                 }
 
                 @Override
-                public void onFailure(Call<DiscussionList> call, Throwable t) {
-                    mEventBus.post(new NetworkErrorEvent(t.getMessage()));
+                public void onFailure(Call<JsonObject> call, Throwable t) {
+                    Log.i("Failure!", t.getMessage());
                 }
             });
         }else{

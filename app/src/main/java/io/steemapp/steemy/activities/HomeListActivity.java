@@ -130,7 +130,7 @@ public class HomeListActivity extends AbstractActivity implements
         if(mCategoryData != null && mCategoryData.getCurrent() != null)
             mService.getDiscussions(mSortMethod.toString(), mCategoryData.getCurrent(), "none", "none", 11);
         else
-            mService.getDiscussions(mSortMethod.toString(), "none", "none", "none", 11);
+            mService.getDiscussions(mSortMethod.toString(), null, null, null, 11);
     }
 
     @Override

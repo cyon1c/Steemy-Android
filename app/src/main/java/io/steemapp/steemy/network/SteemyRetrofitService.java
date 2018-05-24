@@ -2,6 +2,7 @@ package io.steemapp.steemy.network;
 
 import com.google.gson.JsonObject;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.steemapp.steemy.models.AccountResult;
@@ -12,10 +13,12 @@ import io.steemapp.steemy.models.Discussion;
 import io.steemapp.steemy.models.DiscussionList;
 import io.steemapp.steemy.models.FollowerList;
 import io.steemapp.steemy.models.GlobalResults;
+import io.steemapp.steemy.network.rpc.RPCRequest;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Response;
+import retrofit2.http.Body;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
@@ -28,6 +31,9 @@ import retrofit2.http.Path;
  * Created by John on 7/28/2016.
  */
 public interface SteemyRetrofitService {
+
+    @POST("/")
+    Call<JsonObject> call(@Body RPCRequest globalPropsRequest);
 
     @GET("get_categories/{sort}/{after}/{limit}")
     Call<CategoryList> getCategories(@Path("sort") String sort,
